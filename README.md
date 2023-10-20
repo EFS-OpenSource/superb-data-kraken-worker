@@ -1,20 +1,14 @@
 # Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
 
-# Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+[![python39](https://img.shields.io/badge/python-3.9-green?logo=python)](https://www.python.org/)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
-# Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+<p align="center">
+  <img src="docs/images/logo-sdk-white-transparent.png" alt="SDK LOGO" width="50%">
+  <br>
+  <em>A data platform for everyone</em>
+</p>
 
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
+## About
 
-If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+Collection of workers of the **Superb Data Kraken Platform (SDK)**. For further information look at the dedicated README.mds.

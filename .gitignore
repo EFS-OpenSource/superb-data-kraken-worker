@@ -1,0 +1,13 @@
+__pycache__/
+
+venv/
+*.idea
+*.vscode
+
+batch/file_transfer/sample_data/*
+batch/file_transfer/config.ini
+batch/file_transfer/build/*
+batch/file_transfer/dist/*
+
+Pipfile
+.env

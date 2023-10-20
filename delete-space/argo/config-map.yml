@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: delete-space
+  namespace: argo-mgmt
+data:
+  ACCESS_TOKEN_URI: http://keycloak$(postfix)-http.operations.svc.cluster.local/auth/realms/efs-$(environment)/protocol/openid-connect/token
+  ORGANIZATIONMANAGER_URL: http://organizationmanager$(postfix).backend.svc.cluster.local:8090/organizationmanager/api/v1.0

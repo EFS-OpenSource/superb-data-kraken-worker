@@ -1,0 +1,43 @@
+apiVersion: argoproj.io/v1alpha1
+kind: CronWorkflow
+metadata:
+  name: delete-security-auditlogs-workflow
+  namespace: argo-mgmt
+spec:
+  workflowSpec:
+    templates:
+    - name: delete-security-auditlogs
+      outputs: {}
+      metadata: {}
+      container:
+        name: main
+        image: 'acr$(environment).azurecr.io/delete-security-auditlog:$(tagLatest)'
+        command:
+        - python
+        args:
+        - main.py
+        env:
+        - name: CLIENT_ID
+          valueFrom:
+            secretKeyRef:
+              name: argo-server-sso
+              key: clientID
+        - name: CLIENT_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: argo-server-sso
+              key: clientSecret
+        envFrom:
+        - configMapRef:
+            name: delete-security-auditlogs
+        resources: {}
+    entrypoint: delete-security-auditlogs
+    arguments: {}
+    ttlStrategy:
+      secondsAfterSuccess: 3600
+      secondsAfterFailure: 172800
+    podGC:
+      strategy: OnPodCompletion
+  schedule: 0 0 * * *
+  concurrencyPolicy: Replace
+  startingDeadlineSeconds: 0
