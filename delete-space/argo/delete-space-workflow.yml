@@ -11,7 +11,7 @@ spec:
       metadata: {}
       container:
         name: main
-        image: 'acr$(environment).azurecr.io/delete-space:$(tagLatest)'
+        image: '$(CONTAINER_REGISTRY)/delete-space:$(tagVersion)'
         imagePullPolicy: Always
         command:
         - python
