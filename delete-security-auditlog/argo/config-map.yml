@@ -4,6 +4,6 @@ metadata:
   name: delete-security-auditlogs
   namespace: argo-mgmt
 data:
-  ACCESS_TOKEN_URI: http://keycloak$(postfix)-http.operations.svc.cluster.local/auth/realms/efs-$(environment)/protocol/openid-connect/token
-  OPENSEARCH_URL: opensearch-cluster-client.elasticsearch.svc.cluster.local:9200
+  ACCESS_TOKEN_URI: http://keycloak$(postfix)-http.operations.svc.cluster.local/auth/realms/$(REALM)/protocol/openid-connect/token
+  OPENSEARCH_URL: $(ELASTICSEARCH_SERVICE).elasticsearch.svc.cluster.local:9200
   INDICES_TO_KEEP: "30"

@@ -14,7 +14,7 @@ parameters:
 
 variables:
   imageRepository: 'delete-space'
-  containerRegistry: 'acr$(environment).azurecr.io'
+  containerRegistry: '$(CONTAINER_REGISTRY)'
   dockerfilePath: 'delete-space/batch/delete-space/Dockerfile'
   ${{ if eq(parameters.stage, 'prod') }}:
     tagVersion: '$(Build.BuildId)'
@@ -58,10 +58,6 @@ stages:
       runOnce:
         deploy:
           steps:
-          - task: CmdLine@2
-            inputs:
-              script: |
-                echo "environment is $(environment)"
           - task: replacetokens@3
             inputs:
               rootDirectory: '$(Pipeline.Workspace)'
